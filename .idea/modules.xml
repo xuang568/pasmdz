@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/pasm-controller/pasm-controller.iml" filepath="$PROJECT_DIR$/pasm-controller/pasm-controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pasm-core/pasm-core.iml" filepath="$PROJECT_DIR$/pasm-core/pasm-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pasm-integration/pasm-integration.iml" filepath="$PROJECT_DIR$/pasm-integration/pasm-integration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pasmdz.iml" filepath="$PROJECT_DIR$/pasmdz.iml" />
+    </modules>
+  </component>
+</project>
