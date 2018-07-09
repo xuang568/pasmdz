@@ -1,8 +1,0 @@
-# 忽略.gitignore文件
-.gitignore
-# 忽略.idea/文件夹
-.idea/
-# 忽略target/文件夹
-target/
-# 忽略test/文件夹
-test/

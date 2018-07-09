@@ -39,12 +39,9 @@ public class PcmuatIntegrationService {
         String res = null;
         try {
 
-            logger.info("WebServiceUtil queryPcmuat params:"+str);
-            System.out.println("WebServiceUtil queryPcmuat params:"+str);
+            logger.info("WebServiceUtil queryPcmuat params:{}"+str);
             res = WebServiceUtil.queryPcmuat("http://172.16.10.71:8080/pcmuat/services/pboc", "getXML", str);
-            logger.info("WebServiceUtil queryPcmuat result:"+res);
-            System.out.println("WebServiceUtil queryPcmuat result:"+res);
-
+            logger.info("WebServiceUtil queryPcmuat result:{}"+res);
             if("".equals(res)){
                 return result;
             }

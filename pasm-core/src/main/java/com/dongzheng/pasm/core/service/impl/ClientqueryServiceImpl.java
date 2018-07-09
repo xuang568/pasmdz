@@ -81,21 +81,21 @@ public class ClientqueryServiceImpl extends BaseServiceImpl<Clientquery, Integer
     @Override
     public Clientquery queryFirst(Clientquery clientquery) {
       try {
-          logger.info("call ClientqueryServiceImpl queryFirst:"+clientquery);
+          logger.info("call ClientqueryServiceImpl queryFirst:{}"+clientquery);
           //首次查询，创建查询记录
           if(clientquery!=null){
               PcmuatReqDTO pcmuatReqDTO=new PcmuatReqDTO();
-              pcmuatReqDTO.setApplyNo("00001-2007-05-6259");
+              pcmuatReqDTO.setApplyNo(clientquery.getApplicationNo());
               pcmuatReqDTO.setOperator(String.valueOf(clientquery.getBranchId()));
               pcmuatReqDTO.setRequestDate(clientquery.getQueryTime());
-              pcmuatReqDTO.setApplicationNumber("00001-2007-05-6259");
+              pcmuatReqDTO.setApplicationNumber(clientquery.getApplicationNo());
               pcmuatReqDTO.setApplicantName(clientquery.getName());
               pcmuatReqDTO.setApplicationRole(clientquery.getApplicationRole());
               pcmuatReqDTO.setIdCardType(clientquery.getIdCardType());
               pcmuatReqDTO.setIdCardNbr(clientquery.getIdCardNo());
               pcmuatReqDTO.setQueryReason(clientquery.getQueryReason());
               String pcmuatResult = pcmuatIntegrationService.queryPcmuat(pcmuatReqDTO);
-              logger.info("ClientqueryServiceImpl queryFirst result:",pcmuatResult);
+              logger.info("ClientqueryServiceImpl queryFirst result:{}",pcmuatResult);
               if("True".equals(pcmuatResult)){
                   //查询结果变更为查询中
                   clientquery.setQueryResult("02");

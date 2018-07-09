@@ -27,8 +27,4 @@ public class BlacklistServiceImpl extends BaseServiceImpl<Blacklist, Integer> im
         return blacklistDao.findByIdCard(idCard);
     }
 
-    public Object test(String s) {
-        Object test = blacklistDao.test(s);
-        return test;
-    }
 }

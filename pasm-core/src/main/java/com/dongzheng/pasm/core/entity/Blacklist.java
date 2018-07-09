@@ -50,7 +50,7 @@ public class Blacklist extends BaseEntity {
 	/**
 	 * 加入本系统黑名单时间
 	 */
-	private Date registerTime;
+	private Date updateTime;
 
 
 	public Integer getId() {
@@ -102,11 +102,11 @@ public class Blacklist extends BaseEntity {
 	}
 
 	public Date getRegisterTime() {
-		return registerTime;
+		return updateTime;
 	}
 
 	public void setRegisterTime(Date registerTime) {
-		this.registerTime = registerTime;
+		this.updateTime = registerTime;
 	}
 
 

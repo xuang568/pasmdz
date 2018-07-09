@@ -1,6 +1,7 @@
 package com.dongzheng.pasm.controller;
 
 import com.dongzheng.pasm.core.common.DateEditor;
+import com.dongzheng.pasm.core.common.utils.GenerationNumberUtils;
 import com.dongzheng.pasm.core.entity.Blacklist;
 import com.dongzheng.pasm.core.entity.Clientquery;
 import com.dongzheng.pasm.core.entity.User;
@@ -60,7 +61,7 @@ public class PreApprovedController extends BaseController{
         try {
             //获取当前登陆用户id 即查询用户的门店号
             User user = (User) SecurityUtils.getSubject().getPrincipal();
-            logger.info("当前用户："+user.getUserName()+"发起查询所有权限下的预授信记录...");
+            logger.info("currentUser："+user.getUserName()+"start find all history...");
             Page<Clientquery> page=null;
            if("admin".equals(user.getUserName())){
                 page = clientqueryService.findAll(getPageRequest());
@@ -75,7 +76,7 @@ public class PreApprovedController extends BaseController{
                }
            }
             modelMap.put("pageInfo", page);
-            logger.info("当前用户:"+user.getUserName()+"查询所有权限下的预售信记录:"+page.iterator());
+            logger.info("currentUser:"+user.getUserName()+"find all history result:{}"+page.iterator());
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -113,28 +114,33 @@ public class PreApprovedController extends BaseController{
         Clientquery query=new Clientquery();
        try {
            //01黑名单校验
-           logger.info("blacklistService findByidCard param:",clientquery.getIdCardNo());
+           logger.info("blacklistService findByidCard param:{}",clientquery.getIdCardNo());
            List<Blacklist> byidCard = blacklistService.findByidCard(clientquery.getIdCardNo());
-           logger.info("blacklistService findByidCard result:",byidCard);
+           logger.info("blacklistService findByidCard result:{}",byidCard);
            if(byidCard.size()>0){
+               clientquery.setQueryTime(byidCard.get(0).getBlackTime());
+               clientquery.setName(byidCard.get(0).getName());
+               clientquery.setPhone(byidCard.get(0).getPhone());
                clientquery.setQueryResult("03");
                return clientquery;
            }
            //获取当前登陆用户id 即查询用户的门店号
            User user = (User) SecurityUtils.getSubject().getPrincipal();
-           logger.info("currentUser："+user.getUserName()+"queryClientqueryStart:"+clientquery);
+           logger.info("currentUser："+user.getUserName()+":queryClientqueryStart:{}"+clientquery);
            //密等性校验
            Date date=new Date();
            query = clientqueryService.queryInfo(clientquery.getIdCardNo());
            //首次查询，有限期30天校验
            if(query!=null && (date.getTime()-query.getQueryTime().getTime())/(24*60*60*1000)<30){
-               logger.info("currentUser：{}"+user.getUserName()+"queryClientqueryResult:"+query);
+               logger.info("currentUser：{}"+user.getUserName()+":queryClientqueryResult:{}"+query);
                return query;
            }
+           //入参赋值
            clientquery.setBranchId(user.getId());
            clientquery.setQueryTime(date);
+           clientquery.setApplicationNo( GenerationNumberUtils.getApplicationNo(date));
            query = clientqueryService.queryFirst(clientquery);
-           logger.info("currentUser："+user.getUserName()+"queryFirstClientqueryResult:"+query);
+           logger.info("currentUser："+user.getUserName()+":queryFirstClientqueryResult:{}"+query);
 
        }catch (Exception e){
           e.printStackTrace();

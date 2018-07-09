@@ -19,8 +19,6 @@ import java.util.List;
 @Repository
 public interface IBlacklistDao extends IBaseDao<Blacklist, Integer> {
 
-    List<Blacklist> findByIdCard(String idCard);
-
-    @Query(nativeQuery = true,value = "select * FROM blacklist WHERE id_card = :idCard group by id_card")
-    Blacklist test(@Param("idCard") String idCard);
+    @Query(nativeQuery = true,value = "select * FROM blacklist WHERE id_card = :idCard")
+    List<Blacklist> findByIdCard(@Param("idCard") String idCard);
 }
