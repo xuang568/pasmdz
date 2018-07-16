@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/pasm-core/pasm-core.iml" filepath="$PROJECT_DIR$/pasm-core/pasm-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/pasm-integration/pasm-integration.iml" filepath="$PROJECT_DIR$/pasm-integration/pasm-integration.iml" />
       <module fileurl="file://$PROJECT_DIR$/pasmdz.iml" filepath="$PROJECT_DIR$/pasmdz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pasmdz-api/pasmdz-api.iml" filepath="$PROJECT_DIR$/pasmdz-api/pasmdz-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pasmdz-task/pasmdz-task.iml" filepath="$PROJECT_DIR$/pasmdz-task/pasmdz-task.iml" />
     </modules>
   </component>
 </project>

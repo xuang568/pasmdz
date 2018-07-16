@@ -40,9 +40,10 @@
         <!-- Logo -->
         <a href="../../index2.html" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>A</b>dmin</span>
+            <#--<span class="logo-mini"><b>A</b>dmin</span>-->
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>东正汽车金融</b>admin</span>
+            <span class="logo-lg" style="height:50px;background:url('../../static/assets/img/logoDz.jpg') no-repeat center;-webkit-background-size: contain;background-size: contain;"></span>
+            <#--<img src="../../static/assets/img/logoDz.jpg" alt="" class="logo-lg"/>-->
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
@@ -60,14 +61,12 @@
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="<@shiro.principal property="avatar"/>" class="user-image" alt="User Image">
-                            <span class="hidden-xs"><@shiro.principal property="nickName"/></span>
+                        账号管理
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
-                                <img src="<@shiro.principal property="avatar"/>" class="img-circle" alt="User Image">
-
+                                <img src="../../static/assets/img/01.jpg"/>
                                 <p>
                               <@shiro.principal property="description"/>
                                     <small><@shiro.principal property="createTime"/></small>
@@ -95,18 +94,21 @@
     <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
-            <!-- Sidebar user panel -->
-            <div class="user-panel">
+         <#--  <!-- Sidebar user panel &ndash;&gt;-->
+           <#-- <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="<@shiro.principal property="avatar"/>" class="img-circle" alt="User Image">
+                    <img src="../../static/assets/img/timg.jpg"/>
                 </div>
                 <div class="pull-left info">
                     <p><@shiro.principal property="nickName"/></p>
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
-            </div>
+            </div>-->
 
-            <!-- sidebar menu: : style can be found in sidebar.less -->
+
+
+
+             sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li <#if active = "home">class="active" </#if>><a href="${ctx!}/index"><i class="fa fa-home"></i> <span>主页</span></a>
                 </li>
@@ -119,15 +121,15 @@
                     </a>
                     <ul class="treeview-menu">
             <@shiro.hasPermission name="system:user:index">
-                <li id="s1"><a href="${ctx!}/user/index"><i class="fa fa-user-o"></i>
+                <li id="s1" <#if active=="user">class="active"</#if>><a href="${ctx!}/user/index"><i class="fa fa-user-o"></i>
                     用户管理</a></li>
             </@shiro.hasPermission>
             <@shiro.hasPermission name="system:role:index">
-                <li id="s2"><a href="${ctx!}/role/index"><i
+                <li id="s2" <#if active=="role">class="active"</#if>><a href="${ctx!}/role/index"><i
                         class="fa fa-user-circle-o"></i> 角色管理</a></li>
             </@shiro.hasPermission>
             <@shiro.hasPermission name="system:resource:index">
-                <li id="s3"><a href="${ctx!}/resource/index"><i
+                <li id="s3" <#if active=="resource">class="active"</#if>><a href="${ctx!}/resource/index"><i
                         class="fa fa-file-o"></i> 资源管理</a></li>
             </@shiro.hasPermission>
                     </ul>
@@ -143,7 +145,7 @@
                     </a>
                     <ul class="treeview-menu">
             <@shiro.hasPermission name="system:pasm:index">
-                <li id="p1"><a href="/pasm/index.ftl"><i class="fa fa-user-o"></i>
+                <li id="p1" ><a href="/pasm/index.ftl"><i class="fa fa-user-o"></i>
                     首次查询</a></li>
             </@shiro.hasPermission>
 

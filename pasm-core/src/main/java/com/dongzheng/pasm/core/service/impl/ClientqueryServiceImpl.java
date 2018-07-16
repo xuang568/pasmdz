@@ -99,19 +99,19 @@ public class ClientqueryServiceImpl extends BaseServiceImpl<Clientquery, Integer
               if("True".equals(pcmuatResult)){
                   //查询结果变更为查询中
                   clientquery.setQueryResult("02");
-                  clientquery.setApplicationNo("Br-A028883000");
-                  //首次查询记录入库
-                  Clientquery client = clientqueryDao.save(clientquery);
-                  return client;
+              }else {
+                  //查询结果变更为查询失败
+                  clientquery.setQueryResult("05");
               }
-              clientquery.setQueryResult("05");
-              return clientquery;
+              //首次查询记录入库
+              Clientquery client = clientqueryDao.save(clientquery);
+              return client;
           }
       }catch (Exception e){
           e.printStackTrace();
       }
 
-        return null;
+        return clientquery;
     }
 
     @Override

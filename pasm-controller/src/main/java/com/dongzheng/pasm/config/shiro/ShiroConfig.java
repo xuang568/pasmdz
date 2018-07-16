@@ -65,7 +65,7 @@ public class ShiroConfig {
         shiroFilter.setUnauthorizedUrl("/privilege/no");
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
         filterChainDefinitionMap.put("/assets/**", "anon");
-
+        filterChainDefinitionMap.put("/service/**", "anon");
         filterChainDefinitionMap.put("/login", "anon");
 
         List<Resource> list = resourceService.findAll();
@@ -73,6 +73,7 @@ public class ShiroConfig {
             filterChainDefinitionMap.put(resource.getSourceUrl(), "perms[" + resource.getSourceKey() + "]");
         }
         filterChainDefinitionMap.put("/**", "authc");
+
         shiroFilter.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return shiroFilter;
     }

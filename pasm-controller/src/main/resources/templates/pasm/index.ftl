@@ -18,10 +18,42 @@
                     document.getElementById("td_id").innerHTML = res.id;
                     document.getElementById("td_applicationNo").innerHTML = res.applicationNo;
                     document.getElementById("td_name").innerHTML = res.name;
-                    document.getElementById("td_idCardType").innerHTML = res.idCardType;
+                    if(res.idCardType=="0"){
+                        document.getElementById("td_idCardType").innerHTML = "身份证";
+                    }else if(res.idCardType=="1"){
+                        document.getElementById("td_idCardType").innerHTML = "户口簿";
+                    }else if(res.idCardType=="2"){
+                        document.getElementById("td_idCardType").innerHTML = "护照";
+                    }else {
+                        document.getElementById("td_idCardType").innerHTML = res.idCardType;
+                    }
                     document.getElementById("td_idCardNo").innerHTML = res.idCardNo;
-                    document.getElementById("td_applicationRole").innerHTML = res.applicationRole;
-                    document.getElementById("td_queryReason").innerHTML = res.queryReason;
+                    if(res.applicationRole=="A"){
+                        document.getElementById("td_applicationRole").innerHTML ="申请人";
+                    }else if(res.applicationRole=="B"){
+                        document.getElementById("td_applicationRole").innerHTML ="共同申请人";
+                    }else if(res.applicationRole=="C"){
+                        document.getElementById("td_applicationRole").innerHTML ="担保人";
+                    }else {
+                        document.getElementById("td_applicationRole").innerHTML =res.applicationRole;
+                    }
+                    if(res.queryReason=="01"){
+                        document.getElementById("td_queryReason").innerHTML = "贷后管理";
+                    }else if(res.queryReason=="02"){
+                        document.getElementById("td_queryReason").innerHTML = "贷款审批";
+                    }else if(res.queryReason=="03"){
+                        document.getElementById("td_queryReason").innerHTML = "信用卡审批";
+                    }else if (res.queryReason=="05"){
+                        document.getElementById("td_queryReason").innerHTML = "异议核查";
+                    }else if(res.queryReason=="08"){
+                        document.getElementById("td_queryReason").innerHTML = "担保资格审查";
+                    }else if(res.queryReason=="16"){
+                        document.getElementById("td_queryReason").innerHTML = "公积金提取复核";
+                    }else if(res.queryReason=="19"){
+                        document.getElementById("td_queryReason").innerHTML = "特约商户实名审查";
+                    }else {
+                        document.getElementById("td_queryReason").innerHTML = res.queryReason;
+                    }
                     document.getElementById("td_phone").innerHTML = res.phone;
                     document.getElementById("td_queryTime").innerHTML = res.queryTime;
                     if (res.queryResult == "01") {
@@ -30,9 +62,7 @@
                         document.getElementById("td_queryResult").innerHTML = "未通过";
                     } else if (res.queryResult == "02") {
                         document.getElementById("td_queryResult").innerHTML = "查询中";
-                    } else if (res.queryResult == "05") {
-                        document.getElementById("td_queryResult").innerHTML = "查询失败，稍后重试";
-                    }else {
+                    } else {
                         document.getElementById("td_queryResult").innerHTML = "未知";
                     }
                     document.getElementById("td_branchId").innerHTML = res.branchId;

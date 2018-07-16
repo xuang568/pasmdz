@@ -1,5 +1,6 @@
 package com.dongzheng.pasm.core.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.dongzheng.pasm.core.entity.support.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -69,6 +70,7 @@ public class Clientquery extends BaseEntity {
     /**
      * 查询时间
      */
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date queryTime;
     /**
      * 查询结果

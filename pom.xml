@@ -10,6 +10,8 @@
         <module>pasm-controller</module>
         <module>pasm-core</module>
         <module>pasm-integration</module>
+        <module>pasmdz-api</module>
+        <module>pasmdz-task</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -70,6 +72,16 @@
             <dependency>
                 <groupId>com.dongzheng.pasm</groupId>
                 <artifactId>pasm-integration</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dongzheng.pasm</groupId>
+                <artifactId>pasmdz-api</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dongzheng.pasm</groupId>
+                <artifactId>pasmdz-task</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>

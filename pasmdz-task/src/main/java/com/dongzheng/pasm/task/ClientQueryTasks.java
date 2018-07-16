@@ -9,11 +9,12 @@ import java.util.Date;
 /**
  * <p>
  *
- * </p>
+ * </p>author
  *
  * @author xa
  * @since 2018-06-10
  */
+
 @Component
 public class ClientQueryTasks {
 

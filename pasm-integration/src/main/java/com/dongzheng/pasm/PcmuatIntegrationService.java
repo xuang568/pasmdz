@@ -3,10 +3,11 @@ package com.dongzheng.pasm;
 import com.dongzheng.pasm.Req.PcmuatReqDTO;
 import com.dongzheng.pasm.utils.DateUtil;
 import com.dongzheng.pasm.utils.WebServiceUtil;
-import org.apache.log4j.Logger;
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.Iterator;
@@ -15,9 +16,9 @@ import java.util.Iterator;
  * zhong ke ruan ren hang zheng xin fu wu
  * */
 @Service
-public class PcmuatIntegrationService {
-    private static Logger logger = Logger.getLogger(PcmuatIntegrationService.class);
-
+public class PcmuatIntegrationService{
+    //定义一个全局的记录器，通过LoggerFactory获取
+    private final static Logger logger = LoggerFactory.getLogger(PcmuatIntegrationService.class);
     String result="fail";
 
     public String queryPcmuat(PcmuatReqDTO pcmuatReqDTO) {
@@ -38,10 +39,9 @@ public class PcmuatIntegrationService {
                 +"</Root>";
         String res = null;
         try {
-
-            logger.info("WebServiceUtil queryPcmuat params:{}"+str);
+            logger.info("webServiceUtil queryPcmuat params:{}"+str);
             res = WebServiceUtil.queryPcmuat("http://172.16.10.71:8080/pcmuat/services/pboc", "getXML", str);
-            logger.info("WebServiceUtil queryPcmuat result:{}"+res);
+            logger.info("webServiceUtil queryPcmuat result:{}"+res);
             if("".equals(res)){
                 return result;
             }

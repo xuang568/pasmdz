@@ -60,8 +60,8 @@
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="<@shiro.principal property="avatar"/>" class="user-image" alt="User Image">
-                            <span class="hidden-xs"><@shiro.principal property="nickName"/></span>
+                           <#-- <img src="<@shiro.principal property="avatar"/>" class="user-image" alt="User Image">
+                            <span class="hidden-xs"><@shiro.principal property="nickName"/></span>-->
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->

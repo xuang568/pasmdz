@@ -1,5 +1,4 @@
 import com.alibaba.fastjson.JSON;
-import com.dongzheng.pasm.Application;
 import com.dongzheng.pasm.Req.PcmuatReqDTO;
 import org.apache.http.*;
 import org.apache.http.client.HttpClient;
@@ -15,9 +14,6 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.BufferedReader;
 import java.io.IOException;

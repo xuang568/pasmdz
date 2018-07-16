@@ -24,11 +24,11 @@ public class GenerationNumberUtils {
      */
     public static String getApplicationNo(Date date) {
         StringBuilder applicationNo=new StringBuilder();
-        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM");
         String format = sdf.format(date);
-        applicationNo.append("Pasmdz-");
+        applicationNo.append("Pd-");
         applicationNo.append(format);
-        applicationNo.append("-"+UUID.randomUUID().toString().substring(0,6));
+        applicationNo.append("-"+UUID.randomUUID().toString().substring(0,4));
         return applicationNo.toString();
     }
 }

@@ -1,7 +1,5 @@
 package com.dongzheng.pasm.Req;
 
-import jdk.internal.instrumentation.InstrumentationMethod;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

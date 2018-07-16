@@ -1,18 +1,19 @@
 package com.dongzheng.pasm.utils;
 
+import com.dongzheng.pasm.PcmuatIntegrationService;
 import org.apache.axis.client.Call;
 import org.apache.axis.client.Service;
-import org.apache.log4j.Logger;
-import org.springframework.stereotype.Repository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author xuang
  * @date 2018年7月23日
  * WebServiceUtil 工具类
  */
-@Repository
 public class WebServiceUtil {
-    private static Logger logger = Logger.getLogger(WebServiceUtil.class);
+    //定义一个全局的记录器，通过LoggerFactory获取
+    private final static Logger logger = LoggerFactory.getLogger(PcmuatIntegrationService.class);
 
     /**
     * webservice zhong ke ruan 服务接口

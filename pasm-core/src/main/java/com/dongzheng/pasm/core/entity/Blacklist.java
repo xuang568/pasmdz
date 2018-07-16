@@ -1,5 +1,6 @@
 package com.dongzheng.pasm.core.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.dongzheng.pasm.core.entity.support.BaseEntity;
 import lombok.ToString;
 
@@ -42,6 +43,7 @@ public class Blacklist extends BaseEntity {
 	/**
 	 * 首次加入黑名单时间
 	 */
+	@JSONField(format = "yyyy-MM-dd HH:mm:ss")
 	private Date blackTime;
 	/**
 	 * 黑名单类型
@@ -50,6 +52,7 @@ public class Blacklist extends BaseEntity {
 	/**
 	 * 加入本系统黑名单时间
 	 */
+	@JSONField(format = "yyyy-MM-dd HH:mm:ss")
 	private Date updateTime;
 
 

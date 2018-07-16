@@ -10,6 +10,8 @@
         <module name="pasm-controller" />
         <module name="pasm-core" />
         <module name="pasm-integration" />
+        <module name="pasmdz-api" />
+        <module name="pasmdz-task" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -17,6 +19,8 @@
       <module name="pasm-core" target="1.8" />
       <module name="pasm-integration" target="1.8" />
       <module name="pasmdz" target="1.8" />
+      <module name="pasmdz-api" target="1.8" />
+      <module name="pasmdz-task" target="1.8" />
       <module name="psam-task" target="1.8" />
     </bytecodeTargetLevel>
   </component>

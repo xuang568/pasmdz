@@ -1,14 +1,9 @@
 package com.dongzheng.pasm.Req;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.springframework.stereotype.Repository;
-import sun.plugin2.message.Serializer;
-
-import java.io.Serializable;
-import java.util.Date;
 
 @Repository
 @ToString
@@ -16,6 +11,7 @@ import java.util.Date;
 @Setter
 public class PcmuatReqDTO extends BaseReqDTO {
 
+    private static final long serialVersionUID = -5310062206349973359L;
     /**
      * 申请号
      */
