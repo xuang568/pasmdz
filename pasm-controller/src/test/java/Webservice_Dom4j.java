@@ -59,7 +59,7 @@ public class Webservice_Dom4j {
         String res = null;
         try {
             //res = ConnectionToJava("http://172.16.10.71:8080/pcmuat/services/pboc", "getXML", str);
-            res = ConnectionToJava("http://localhost:8081/service/test/", "clientQueryNotify","nihao");
+            res = ConnectionToJava("http://localhost:8090/service/ClientQueryWbServices", "clientQueryNotify","nihao");
 
 
         } catch (Exception e) {

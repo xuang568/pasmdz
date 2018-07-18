@@ -7,6 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import javax.xml.ws.Endpoint;
 
@@ -19,7 +21,8 @@ import javax.xml.ws.Endpoint;
  * @since 2018-06-10
  */
 @SpringBootApplication
-//@EnableScheduling
+@EnableScheduling
+@EnableCaching
 public class Application extends SpringBootServletInitializer {
 
     private static Logger logger = LoggerFactory.getLogger(Application.class);

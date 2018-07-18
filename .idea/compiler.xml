@@ -11,6 +11,7 @@
         <module name="pasm-core" />
         <module name="pasm-integration" />
         <module name="pasmdz-api" />
+        <module name="pasmdz-common" />
         <module name="pasmdz-task" />
       </profile>
     </annotationProcessing>
@@ -20,6 +21,7 @@
       <module name="pasm-integration" target="1.8" />
       <module name="pasmdz" target="1.8" />
       <module name="pasmdz-api" target="1.8" />
+      <module name="pasmdz-common" target="1.8" />
       <module name="pasmdz-task" target="1.8" />
       <module name="psam-task" target="1.8" />
     </bytecodeTargetLevel>
